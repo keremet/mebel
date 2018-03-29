@@ -1,0 +1,81 @@
+Install Guide
+1. Please restore database form “furniture.sql” file to your mysql server.
+2. Copy furniture directory to webroot like as htdocs.
+3. Then install composer and run composer install command in order to install all required venders.
+4. Test the project.
+Requirements:
+PHP 5.6 over, Composer (latest version), Laravel 5.0
+
+
+
+mysql -u root 
+create database furniture180227;
+
+
+mysql -u root furniture180227 < furniture.sql
+
+
+
+sudo ln -s furniture /var/apache2/2.2/htdocs/furniture
+
+
+
+https://getcomposer.org/download/
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+
+php composer.phar install
+
+
+config/database.php
+		'mysql' => [
+			'driver'    => 'mysql',
+			'host'      => env('DB_HOST', 'localhost'),
+			'database'  => env('DB_DATABASE', 'furniture180227'),
+			'username'  => env('DB_USERNAME', 'root'),
+			'password'  => env('DB_PASSWORD', ''),
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+			'strict'    => false,
+		],
+
+
+
+Запуск:
+php artisan serve
+
+
+furniture$ find ./ -name ServeCommand.php
+./vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php
+furniture$ 
+
+			array('host', null, InputOption::VALUE_OPTIONAL, 'The host address to serve the application on.', '192.168.1.2'),
+
+
+
+
+Не реализовано:
+При редактировании и отображении моделей - загрузить и удалить файлы, не являющиеся картинками.
+
+Просмотр фоток в полную величину
+
+
+Должен работать переход на исполнителя и модель с главной страницы
+
+Должен быть второй вариант поиска - каталог моделей - исполнитель определяет в какой каталог.
+Каталоги создают админы.
+
+Сортировка исполнителей по цене
+
+
+надпись Models, а ссылка http://localhost:8000/executors
+
+Картинки растягиваются
+
+Прямоугольники вместо кружков для лиц
+
+
+Требуется ограничение в интерфейсе на кол-во символов в описании, чтобы пользователь не мог ввести то, что потом обрежется

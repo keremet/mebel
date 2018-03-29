@@ -1,0 +1,28 @@
+ul, ul li {
+    list-style: none;
+}
+
+.mainimage {
+    margin: 0px;
+    padding: 0px;
+}
+
+.mainimage img{
+  width: 100%;
+}
+
+.thumbnails {
+    margin-top: 20px;
+    padding: 0px;
+}
+
+.thumbnails li.producthtumb
+{
+  width: 30%;
+  display: inline-block;
+}
+
+.featurette-heading
+{
+  font-size:40px;
+}
