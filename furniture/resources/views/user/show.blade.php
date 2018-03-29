@@ -44,12 +44,12 @@ class="active"
   @foreach ($models as $model)
   <div class="row featurette">
     <div class="col-md-6">
-      <img class="featurette-image img-responsive center-block" src="/model_photo/{{$model->main_photo}}" alt="Generic placeholder image">
+      <a href="/model/{{$model->id}}"><img class="featurette-image img-responsive center-block" src="/model_photo/{{$model->main_photo}}" alt="Generic placeholder image"></a>
     </div>
     <div class="col-md-6">
       <h2 class="featurette-heading">{{$model->title}}</h2>
       <p class="lead">{{$model->description}}</p>
-      <p><span class="price">{{$model->price}} $</span>&nbsp;&nbsp;<a class="btn btn-default" href="#" role="button">Order Now</a></p>          
+      <p><span class="price">{{$model->price}} $</span>&nbsp;&nbsp;<a class="btn btn-default" href="#" role="button">Order Now</a>&nbsp;&nbsp;<a class="btn btn-default" href="/model/{{$model->id}}" role="button">View Details</a></p>          
     </div>
   </div>   
   <hr>

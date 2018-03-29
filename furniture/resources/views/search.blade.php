@@ -6,7 +6,7 @@
   <link href="/css/search.css" rel="stylesheet">
 @endsection
 
-@section('search-active')
+@section('models-active')
 class="active"
 @endsection
 
@@ -14,7 +14,7 @@ class="active"
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Search
+        <h1 class="page-header">Models
         <form class="form-inline pull-right" method="get">
           <div class="form-group">
             <label class="sr-only" for="inputSearch">Model ...</label>
@@ -30,7 +30,7 @@ class="active"
         <ol class="breadcrumb">
             <li><a href="/">Home</a>
             </li>
-            <li class="active">Search</li>
+            <li class="active">Models</li>
         </ol>
     </div>
   </div>

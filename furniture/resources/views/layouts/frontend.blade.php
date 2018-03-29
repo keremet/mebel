@@ -44,7 +44,7 @@
               <ul class="nav navbar-nav">
                 <li @yield('home-active')><a href="/">Home</a></li>
                 <li @yield('executors-active')><a href="/executors">Executors</a></li>
-                <li @yield('search-active')><a href="/search">Search</a></li>
+                <li @yield('models-active')><a href="/models">Models</a></li>
               </ul>
               @if (isset($auth_user))
               <ul class="nav navbar-right navbar-nav">

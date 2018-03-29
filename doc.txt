@@ -79,3 +79,22 @@ furniture$
 
 
 Требуется ограничение в интерфейсе на кол-во символов в описании, чтобы пользователь не мог ввести то, что потом обрежется
+
+
+
+Fixed following issues.
+1. When we create or editing model, there are should be an option to upload and delete non-picture multiple files 
+* Add this function into edit model page.
+2. Title is Models, but link is http://localhost:8000/executors 
+	* Fix the link to /models
+3. From main page we need an ability to go to the model page via link
+	* Add link at images of models for model page.
+
+Upgrade Guide for Fixed issues.
+
+1. Unzip the furniture.zip to project folder. I packed only updated files. So Please take care for unziping.
+2. Run migrate command before testing:  php artisan migrate
+3. Then active php_fileinfo extension.
+Uncomment this line in php config file(php.ini)
+PHP_extension=php_fileinfo.dll
+4. check max upload filesize before uploading files.

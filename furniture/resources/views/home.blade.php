@@ -102,10 +102,10 @@ class="active"
         <div class="col-md-6">
           <h2 class="featurette-heading">{{$model->title}}</h2>
           <p class="lead">{{$model->description}}</p>
-          <p><span class="price">{{$model->price}} $</span>    <a class="btn btn-default" href="#" role="button">Order Now</a></p>          
+          <p><span class="price">{{$model->price}} $</span><a class="btn btn-default" href="#" role="button">Order Now</a></p>          
         </div>
         <div class="col-md-6">
-          <img class="featurette-image img-responsive center-block" src="/model_photo/{{$model->main_photo}}" alt="Generic placeholder image">
+          <a href="/model/{{$model->id}}"><img class="featurette-image img-responsive center-block" src="/model_photo/{{$model->main_photo}}" alt="Generic placeholder image"></a>
         </div>
       </div>
       @else
@@ -113,10 +113,10 @@ class="active"
         <div class="col-md-6 col-md-push-6">
           <h2 class="featurette-heading">{{$model->title}}</h2>
           <p class="lead">{{$model->description}}</p>
-          <p><span class="price">{{$model->price}} $</span>    <a class="btn btn-default" href="#" role="button">Order Now</a></p>
+          <p><span class="price">{{$model->price}} $</span>&nbsp;&nbsp;<a class="btn btn-default" href="#" role="button">Order Now</a></p>
         </div>
         <div class="col-md-6 col-md-pull-6">
-          <img class="featurette-image img-responsive center-block" src="/model_photo/{{$model->main_photo}}" alt="Generic placeholder image">
+          <a href="/model/{{$model->id}}"><img class="featurette-image img-responsive center-block" src="/model_photo/{{$model->main_photo}}" alt="Generic placeholder image"></a>
         </div>
       </div>
       @endif
@@ -128,7 +128,7 @@ class="active"
       <div class="row executors">
       @foreach ($users as $user)
         <div class="col-lg-3">
-          <img class="img-circle" src="/photo/{{$user->photo}}" alt="Generic placeholder image" width="140" height="140">
+          <a href="/executor/{{$user->id}}"><img class="img-circle" src="/photo/{{$user->photo}}" alt="Generic placeholder image" width="140" height="140"></a>
           <h2>{{$user->title}}</h2>
           <p>{{$user->email}}</p>
           <p>{{$user->phone_number}}</p>

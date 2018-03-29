@@ -9,6 +9,7 @@ use Furniture\User;
 use Furniture\FModel;
 use Furniture\FPhoto;
 use Furniture\MConnection;
+use Furniture\MFile;
 use Auth;
 use Storage;
 use Log;
@@ -21,7 +22,7 @@ class ModelController extends Controller {
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['show', 'photo']]);
+        $this->middleware('auth', ['except' => ['show', 'photo', 'file']]);
     }
 
 	/**
@@ -127,7 +128,7 @@ class ModelController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit(Request $request, $id)
 	{
 		try{
 			$model = FModel::findOrFail($id);
@@ -135,13 +136,16 @@ class ModelController extends Controller {
 			if ($model->created_by == Auth::user()->id)
 			{
 				$photos = $model->photos;
+				$files = $model->files;
 				$price = 0;
 
 		    $connection = $model->connections()->where('user_id', Auth::user()->id)->first();
 				if ($connection)
 					$price = $connection->price;
 
-				return view('model.edit', ['model'=>$model, 'price'=>$price, 'photos'=> $photos]);			
+				$file_error = $request->session()->get('file_error');
+
+				return view('model.edit', ['model'=>$model, 'price'=>$price, 'photos'=> $photos, 'files'=>$files, 'file_error'=>$file_error]);			
 			}			
 		}catch(ModelNotFoundException $e)
 		{
@@ -227,6 +231,19 @@ class ModelController extends Controller {
 		return redirect($redirect);
 	}
 
+	public function photo_delete(Request $request, $id)
+	{
+		$user = Auth::user();
+		$photo = FPhoto::find($id);
+		$model = $photo->model;
+		if ($model->created_by == $user->id) {
+			$photo->delete();
+		}
+
+		$redirect = $request->input('redirectTo');
+		return redirect($redirect);
+	}
+
 	public function photo_set_main(Request $request, $id)
 	{
 		$redirect = $request->input('redirectTo');
@@ -241,13 +258,58 @@ class ModelController extends Controller {
 		return redirect($redirect);
 	}
 
-	public function photo_delete(Request $request, $id)
+	public function file($hash)
+	{
+		if (!Storage::exists('model_files/'.$hash)) {
+			return abort(404);
+		}
+
+		$mfile = MFile::where('hash', $hash)->first();
+		if (!$mfile)
+		{
+			return abort(404);	
+		}
+
+		$path = storage_path().'/app/model_files/' . $hash;
+
+		return response()->download($path, $mfile->filename);
+	}
+
+	public function file_add(Request $request, $id)
+	{
+		$redirect = $request->input('redirectTo');
+		$file_error = "";
+
+		$model = FModel::find($id);
+		if ($model->created_by != Auth::user()->id)
+			return redirect($redirect);
+
+    if ($request->hasFile('file') && $request->file('file')->isValid()) {
+	  	$file = $request->file('file');
+	  	$filename = $file->getClientOriginalName();
+			$hash = str_random(40);
+
+			$file->move(storage_path().'/app/model_files/', $hash);
+
+			$mfile = new MFile;
+			$mfile->filename = $filename;
+			$mfile->hash = $hash;
+			
+	    $model->files()->save($mfile);
+		}	else {
+			$request->session()->flash('file_error', $request->file('file')->getErrorMessage());
+		}
+
+		return redirect($redirect);
+	}
+
+	public function file_delete(Request $request, $id)
 	{
 		$user = Auth::user();
-		$photo = FPhoto::find($id);
-		$model = $photo->model;
+		$file = MFile::find($id);
+		$model = $file->model;
 		if ($model->created_by == $user->id) {
-			$photo->delete();
+			$file->delete();
 		}
 
 		$redirect = $request->input('redirectTo');
@@ -271,5 +333,5 @@ class ModelController extends Controller {
 		}
 
 		return redirect('/model/'.$id);
-	}	
+	}
 }

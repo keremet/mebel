@@ -26,7 +26,7 @@ function markdown($text) {
 Route::get('/', 'HomeController@index');
 Route::get('/executors', 'HomeController@executors');
 Route::get('/executor/{id}', 'UserController@show');
-Route::get('/search', 'HomeController@modelsearch');
+Route::get('/models', 'HomeController@modelsearch');
 
 Route::resource('user', 'UserController');
 Route::resource('model', 'ModelController');
@@ -49,5 +49,9 @@ Route::get('/model_photo/{hash}', 'ModelController@photo');
 Route::post('/model/photo/add/{id}', 'ModelController@photo_add');
 Route::post('/model/photo/main/{id}', 'ModelController@photo_set_main');
 Route::post('/model/photo/delete/{id}', 'ModelController@photo_delete');
+
+Route::get('/model_file/{hash}', 'ModelController@file');
+Route::post('/model/file/add/{id}', 'ModelController@file_add');
+Route::post('/model/file/delete/{id}', 'ModelController@file_delete');
 
 Route::post('/model/execute/{id}', 'ModelController@execute');

@@ -7,7 +7,7 @@
   <link href="/css/model.css" rel="stylesheet">
 @endsection
 
-@section('executors-active')
+@section('models-active')
 class="active"
 @endsection
 
@@ -20,7 +20,7 @@ class="active"
         <ol class="breadcrumb">
             <li><a href="/">Home</a>
             </li>
-            <li><a href="/executors">Models</a></li>
+            <li><a href="/models">Models</a></li>
             <li class="active">{{$model->title}}</li>
         </ol>
     </div>
@@ -46,6 +46,18 @@ class="active"
       <h2 class="featurette-heading">{{$model->title}}</h2>
       <p class="lead">{{$model->description}}</p>
       <p><span class="price">{{$model->price}} $</span></p>
+      @if (count($model->files) > 0)
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Files</h3>
+        </div>
+        <div class="panel-body">
+          @foreach ($model->files as $file)
+          <p><a href="/model_file/{{$file->hash}}">{{$file->filename}}</a></p>
+          @endforeach
+        </div>
+      </div>
+      @endif
       @if (isset($auth_user))
         @if ($model->isConnected($auth_user->id))
         <p>

@@ -27,6 +27,14 @@ class FModel extends Model {
     }
 
     /**
+     * Get the files for the model.
+     */
+    public function files()
+    {
+        return $this->hasMany('Furniture\MFile', 'model_id');
+    }
+
+    /**
      * Get the owner for the model.
      */
     public function owner()
