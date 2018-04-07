@@ -2,7 +2,7 @@
 
 @section('models-nav')
 <li class="active">
-    <a href="/model"><i class="fa fa-fw fa-file"></i> Models</a>
+    <a href="/model"><i class="fa fa-fw fa-file"></i> Модели</a>
 </li>
 @endsection
 
@@ -11,36 +11,35 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
-            Edit Model
+            Редактирование модели
         </h1>
     </div>
 </div>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h2 class="panel-title">General</h3>
+    <h2 class="panel-title">Основные свойства</h3>
   </div>
   <div class="panel-body">
     <div class="row">
         <div class="col-lg-12">
           <form method="post" action="/model/{{$model->id}}" enctype="multipart/form-data">
             <div class="form-group">
-              <label for="inputTitle">Title</label>
-              <input name="title" type="text" class="form-control" id="inputTitle" placeholder="Title" value="{{$model->title}}">
+              <label for="inputTitle">Название</label>
+              <input name="title" type="text" class="form-control" id="inputTitle" placeholder="Название" value="{{$model->title}}">
             </div>
             <div class="form-group">
-              <label for="inputDescription">Description</label>
-              <textarea name="description" class="form-control" id="inputDescription" rows="10" placeholder="Descriptions...">{{$model->description}}</textarea>
+              <label for="inputDescription">Описание</label>
+              <textarea name="description" class="form-control" id="inputDescription" rows="10" placeholder="Описание...">{{$model->description}}</textarea>
             </div>
             <div class="form-group">
-              <label for="exampleInputAmount">Price</label>
+              <label for="exampleInputAmount">Цена</label>
               <div class="input-group col-xs-4">
-                <div class="input-group-addon">$</div>
-                <input name="price" type="text" class="form-control" id="exampleInputAmount" placeholder="Price" value="{{$price}}">
-                <div class="input-group-addon">.00</div>
+                <div class="input-group-addon">Р</div>
+                <input name="price" type="text" class="form-control" id="exampleInputAmount" placeholder="Цена" value="{{$price}}">
               </div>
             </div>
             <div class="form-group">
-              <label for="exampleInputAmount">MainPhoto<span id="mainPhotoChange"></span></label>
+              <label for="exampleInputAmount">Главное фото<span id="mainPhotoChange"></span></label>
               <div class="input-group col-xs-4">
                 <img src="/model_photo/{{$model->main_photo}}" class="img-thumbnail" alt="200x140" style="width: 200px; height: 140px;">
                 <input type="hidden" name="main_photo" id="inputMainPhoto" value="{{$model->main_photo}}">
@@ -48,7 +47,7 @@
             </div>
             <input type="hidden" name="_method" value="PUT">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default">Отправить</button>
           </form>
         </div>
     </div>
@@ -57,28 +56,28 @@
 <p>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h2 class="panel-title">Photos</h3>
+    <h2 class="panel-title">Фотографии</h3>
   </div>
   <div class="panel-body">
     <div class="row">
       <div class="col-lg-12">
         <form method="post" action="/model/photo/add/{{$model->id}}" enctype="multipart/form-data">
           <div class="form-group">
-            <label for="inputPhoto">Add Photo</label>
+            <label for="inputPhoto">Добавить фото</label>
             <input name="photo" type="file" id="inputPhoto">
-            <p class="help-block">Please upload a addtional picture of this model.</p>
+            <p class="help-block">Пожалуйста загрузите дополнительные фотографии модели.</p>
             <input type="hidden" name="redirectTo" value="/model/{{$model->id}}/edit">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <button type="submit" class="btn btn-default">Upload</button>
+            <button type="submit" class="btn btn-default">Загрузить</button>
           </div>
         </form>
 
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th width="5%">Id</th>
-                    <th width="50%">Photo</th>
-                    <th width="45%">Action</th>
+                    <th width="5%">Номер</th>
+                    <th width="50%">Фото</th>
+                    <th width="45%">Действия</th>
                 </tr>
             </thead>
             <tbody>
@@ -92,14 +91,14 @@
                       <input type="hidden" name="redirectTo" value="/model/{{$model->id}}/edit">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       <input type="hidden" name="photo" value="{{$photo->photo}}">
-                      <button type="submit" class="btn btn-success btn-sm">Set as Main Photo</button>
+                      <button type="submit" class="btn btn-success btn-sm">Сделать главным фото</button>
                     </form>
                     <p>
                     @endif
                     <form method="post" action="/model/photo/delete/{{$photo->id}}">
                       <input type="hidden" name="redirectTo" value="/model/{{$model->id}}/edit">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
                     </form>
                 </td>
                 </tr>
@@ -114,28 +113,28 @@
 <p>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h2 class="panel-title">Files</h3>
+    <h2 class="panel-title">Файлы</h3>
   </div>
   <div class="panel-body">
     <div class="row">
       <div class="col-lg-12">
         <form method="post" action="/model/file/add/{{$model->id}}" enctype="multipart/form-data">
           <div class="form-group">
-            <label for="inputFile">Add Files</label>
+            <label for="inputFile">Добавить файл</label>
             <input name="file" type="file" id="inputFile">
-            <p class="help-block">Please upload a file(non-picture) for this model.</p>
+            <p class="help-block">Пожалуйста загрузите файл(не фото)</p>
             <input type="hidden" name="redirectTo" value="/model/{{$model->id}}/edit">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <button type="submit" class="btn btn-default">Upload</button>
+            <button type="submit" class="btn btn-default">Загрузить</button>
           </div>
         </form>
         {{ $file_error }}
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th width="5%">Id</th>
-                    <th width="70%">Filename</th>
-                    <th width="25%">Action</th>
+                    <th width="5%">Номер</th>
+                    <th width="70%">Файл</th>
+                    <th width="25%">Действия</th>
                 </tr>
             </thead>
             <tbody>
@@ -147,7 +146,7 @@
                     <form method="post" action="/model/file/delete/{{$file->id}}">
                       <input type="hidden" name="redirectTo" value="/model/{{$model->id}}/edit">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                      <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                      <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
                     </form>
                 </td>
                 </tr>

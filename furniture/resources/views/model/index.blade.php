@@ -2,7 +2,7 @@
 
 @section('models-nav')
 <li class="active">
-    <a href="/model"><i class="fa fa-fw fa-file"></i> Models</a>
+    <a href="/model"><i class="fa fa-fw fa-file"></i> Модели</a>
 </li>
 @endsection
 
@@ -11,8 +11,8 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
-            Models
-        <a class="btn btn-primary pull-right" href="/model/create" role="button">Add Model</a>
+            Модели
+        <a class="btn btn-primary pull-right" href="/model/create" role="button">Добавить модель</a>
         </h1>
 
     </div>
@@ -25,11 +25,11 @@
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th width="5%">Id</th>
-                        <th width="30%">Title</th>
-                        <th width="10%">Photo</th>
-                        <th width="10%">Connection</th>
-                        <th width="10%">Action</th>
+                        <th width="5%">Номер</th>
+                        <th width="30%">Название</th>
+                        <th width="10%">Фото</th>
+                        <th width="10%">Производители</th>
+                        <th width="10%">Действия</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,10 +41,10 @@
                         <td>{{ count($model->connections) }}</td>
                         <td>
                             <form method="post" action="/model/{{$model->id}}">
-                                <a class="btn btn-info btn-sm" href="/model/{{$model->id}}/edit">Edit</a> 
+                                <a class="btn btn-info btn-sm" href="/model/{{$model->id}}/edit">Изменить</a> 
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="_method" value="delete">
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</a>
+                                <button type="submit" class="btn btn-danger btn-sm">Удалить</a>
                             </form>
                         </td>
                     </tr>

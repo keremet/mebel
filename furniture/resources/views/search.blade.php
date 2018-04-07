@@ -14,23 +14,23 @@ class="active"
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Models
+        <h1 class="page-header">Модели
         <form class="form-inline pull-right" method="get">
           <div class="form-group">
-            <label class="sr-only" for="inputSearch">Model ...</label>
+            <label class="sr-only" for="inputSearch">Модель ...</label>
             <div class="input-group">
-              <input name="q" type="text" class="form-control" id="inputSearch" placeholder="Model ...">
+              <input name="q" type="text" class="form-control" id="inputSearch" placeholder="Модель ...">
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Search</button>
+          <button type="submit" class="btn btn-primary">Искать</button>
         </form>
         </h1>
 
 
         <ol class="breadcrumb">
-            <li><a href="/">Home</a>
+            <li><a href="/">Главная</a>
             </li>
-            <li class="active">Models</li>
+            <li class="active">Модели</li>
         </ol>
     </div>
   </div>
@@ -43,7 +43,7 @@ class="active"
     <div class="col-md-6">
       <h2 class="featurette-heading">{{$model->title}}</h2>
       <p class="lead">{{$model->description}}</p>
-      <p><span class="price">{{$model->price}} $</span>&nbsp; &nbsp; <a class="btn btn-default" href="/model/{{$model->id}}" role="button">View Detail</a></p>
+      <p><span class="price">{{$model->price}} $</span>&nbsp; &nbsp; <a class="btn btn-default" href="/model/{{$model->id}}" role="button">Подробности</a></p>
     </div>
   </div>   
   <hr>

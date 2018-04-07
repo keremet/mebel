@@ -12,7 +12,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
 
-    <title>Mebel</title>
+    <title>МебелиON</title>
 
     @section('css')
     <!-- Bootstrap core CSS -->
@@ -38,13 +38,13 @@
         <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container">
             <div class="navbar-header">
-              <a class="navbar-brand" href="#">Project name</a>
+              <a class="navbar-brand" href="#">МебелиON</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li @yield('home-active')><a href="/">Home</a></li>
-                <li @yield('executors-active')><a href="/executors">Executors</a></li>
-                <li @yield('models-active')><a href="/models">Models</a></li>
+                <li @yield('home-active')><a href="/">Главная</a></li>
+                <li @yield('executors-active')><a href="/executors">Производители</a></li>
+                <li @yield('models-active')><a href="/models">Модели</a></li>
               </ul>
               @if (isset($auth_user))
               <ul class="nav navbar-right navbar-nav">
@@ -52,24 +52,24 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> {{$auth_user->name}} <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="/model"><i class="glyphicon glyphicon-file"></i> My Models</a>
+                      <a href="/model"><i class="glyphicon glyphicon-file"></i> Мои модели</a>
                     </li>
                     <li>
-                      <a href="/profile"><i class="glyphicon glyphicon-user"></i> Profile</a>
+                      <a href="/profile"><i class="glyphicon glyphicon-user"></i> Мой профиль</a>
                     </li>
                     <li class="divider"></li>
                     <li>
-                       <a href="/logout"><i class="glyphicon glyphicon-off"></i> Log Out</a>
+                       <a href="/logout"><i class="glyphicon glyphicon-off"></i> Выход</a>
                     </li>
                   </ul>
                 </li>
               </ul>
               @else
               <ul class="nav navbar-right navbar-nav">
-                <li><a href="/login">Login</a></li>
+                <li><a href="/login">Вход</a></li>
               </ul>
               <ul class="nav navbar-right navbar-nav">
-                <li><a href="/register">Register</a></li>
+                <li><a href="/register">Регистрация</a></li>
               </ul>
               @endif
             </div>
@@ -82,8 +82,8 @@
 
     <!-- FOOTER -->
     <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-      <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      <p class="pull-right"><a href="#">Вверх</a></p>
+      <p>&copy; 2018 МебелиON &middot; <!--a href="#">Privacy</a> &middot; <a href="#">Terms</a--></p>
     </footer>
 
     <!-- Bootstrap core JavaScript

@@ -18,9 +18,9 @@ class="active"
         <h1 class="page-header">
         </h1>
         <ol class="breadcrumb">
-            <li><a href="/">Home</a>
+            <li><a href="/">Главная</a>
             </li>
-            <li><a href="/models">Models</a></li>
+            <li><a href="/models">Модели</a></li>
             <li class="active">{{$model->title}}</li>
         </ol>
     </div>
@@ -63,17 +63,17 @@ class="active"
         <p>
         <form method="post" action="/model/execute/{{$model->id}}?can=false"> 
         <input type="hidden" name="_token" value="{{ csrf_token() }}">        
-        <button id="not_execute" type="submit" class="btn btn-default"role="button">I can not execute</button>
+        <button id="not_execute" type="submit" class="btn btn-default"role="button">Не могу изготовить</button>
         </form>
         </p>
         @else
-        <p><button id="can_execute" class="btn btn-default" href="/model/execute/{{$model->id}}?can=ture" role="button" data-toggle="modal" data-target="#executeModal">I can execute</button></p>
+        <p><button id="can_execute" class="btn btn-default" href="/model/execute/{{$model->id}}?can=ture" role="button" data-toggle="modal" data-target="#executeModal">Могу изготовить</button></p>
         @endif        
       @endif
     </div>
   </div>
 
-  <h1 class="heading1">Related Executors</h1>
+  <h1 class="heading1">Могут изготовить</h1>
 
   @foreach($users as $index=>$user)
   <div class="row executor">
@@ -85,14 +85,14 @@ class="active"
       <div class="col-md-6">
         <h3>{{$user->title}}
         @if ($index == 0)
-        <span class="badge">Placed</span>
+        <span class="badge">Разместил</span>
         @endif
         </h3>
         <p>{{$user->description}}</p>
       </div>
       <div class="col-md-3">
         <p><span class="price">{{$user->price}} $</span></p>      
-        <a class="btn btn-primary" href="/executor/{{$user->id}}">View</a>
+        <a class="btn btn-primary" href="/executor/{{$user->id}}">Профиль производителя</a>
       </div>      
   </div>
   <hr>
@@ -105,19 +105,19 @@ class="active"
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="executeModalLabel">I can Execute</h4>
+        <h4 class="modal-title" id="executeModalLabel">Могут изготовить</h4>
       </div>
         <form method="post" action="/model/execute/{{$model->id}}?can=true">
         <div class="modal-body">
             <div class="form-group">
-              <label for="recipient-name" class="control-label">Price:</label>
+              <label for="recipient-name" class="control-label">Цена:</label>
               <input name="price" type="text" class="form-control" id="recipient-name">
             </div>
         </div>
         <input type="hidden" name="_token" value="{{ csrf_token() }}">        
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-primary">Отправить</button>
         </div>
         </form>
     </div>

@@ -73,13 +73,13 @@ class="active"
       <div class="row">
         <div class="col-lg-4">
           <img class="img-round" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <h2>Подробная информация</h2>
+          <p>Мы хотим, чтобы информация об изделиях была максимально подробной</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-round" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <p>Повышение производительности труда в мебельной отрасли</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-round" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
@@ -92,7 +92,7 @@ class="active"
       <!-- START THE FEATURETTES -->
 
       <div class="row models-title">
-        <h1 class="text-center">Models</h1>
+        <h1 class="text-center">Модели</h1>
       </div>
       <hr class="featurette-divider">
 

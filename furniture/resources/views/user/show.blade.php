@@ -14,12 +14,12 @@ class="active"
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Executor
+        <h1 class="page-header">Производитель
         </h1>
         <ol class="breadcrumb">
-            <li><a href="/">Home</a>
+            <li><a href="/">Главная</a>
             </li>
-            <li><a href="/executors">Executors</a></li>
+            <li><a href="/executors">Производители</a></li>
             <li class="active">{{$user->title}}</li>
         </ol>
     </div>
@@ -33,9 +33,9 @@ class="active"
       <div class="col-md-8">
         <h3>{{$user->title}}</h3>
         <p>Email: {{$user->email}}</p>
-        <p>Address: {{$user->address}}</p>
-        <p>Phone: {{$user->phone_number}}</p>
-        <p>Description:</p>
+        <p>Адрес: {{$user->address}}</p>
+        <p>Телефон: {{$user->phone_number}}</p>
+        <p>Описание:</p>
         <p>{{$user->description}}</p>
       </div>
   </div>
@@ -49,7 +49,7 @@ class="active"
     <div class="col-md-6">
       <h2 class="featurette-heading">{{$model->title}}</h2>
       <p class="lead">{{$model->description}}</p>
-      <p><span class="price">{{$model->price}} $</span>&nbsp;&nbsp;<a class="btn btn-default" href="/model/{{$model->id}}" role="button">View Details</a></p>          
+      <p><span class="price">{{$model->price}} $</span>&nbsp;&nbsp;<a class="btn btn-default" href="/model/{{$model->id}}" role="button">Подробности</a></p>          
     </div>
   </div>   
   <hr>

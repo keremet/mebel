@@ -14,12 +14,12 @@ class="active"
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Executors
+        <h1 class="page-header">Производители
         </h1>
         <ol class="breadcrumb">
-            <li><a href="/">Home</a>
+            <li><a href="/">Главная</a>
             </li>
-            <li class="active">Executors</li>
+            <li class="active">Производители</li>
         </ol>
     </div>
   </div>
@@ -34,7 +34,7 @@ class="active"
       <div class="col-md-8">
         <h3>{{$user->title}}</h3>
         <p>{{$user->description}}</p>
-        <a class="btn btn-primary" href="/executor/{{$user->id}}">View</a>
+        <a class="btn btn-primary" href="/executor/{{$user->id}}">Перейти в профиль</a>
       </div>
   </div>
   <hr>

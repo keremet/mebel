@@ -13,7 +13,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="/favicon.ico">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Регистрация</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -37,15 +37,15 @@
     <div class="container">
 
       <form class="form-signin" method="post" action="/register">
-        <h2 class="form-signin-heading">Register</h2>
-        <label for="inputUsername" class="sr-only">Username</label>
+        <h2 class="form-signin-heading">Регистрация</h2>
+        <label for="inputUsername" class="sr-only">Логин</label>
         <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
-        <label for="inputEmail" class="sr-only">Email address</label>
+        <label for="inputEmail" class="sr-only">Email</label>
         <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
+        <label for="inputPassword" class="sr-only">Пароль</label>
         <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Регистрация</button>
       </form>
 
     </div> <!-- /container -->

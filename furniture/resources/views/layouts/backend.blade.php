@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Project</title>
+    <title>МебелиON</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/admin/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Project</a>
+                <a class="navbar-brand" href="/">МебелиON</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -48,11 +48,11 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{$auth_user->name}} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/profile"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="/profile"><i class="fa fa-fw fa-user"></i> Профиль</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="/logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="/logout"><i class="fa fa-fw fa-power-off"></i> Выход</a>
                         </li>
                     </ul>
                 </li>
@@ -62,12 +62,12 @@
                 <ul class="nav navbar-nav side-nav">
                     @section('models-nav')
                     <li>
-                        <a href="/model"><i class="fa fa-fw fa-file"></i> Models</a>
+                        <a href="/model"><i class="fa fa-fw fa-file"></i> Модели</a>
                     </li>
                     @show
                     @section('profile-nav')
                     <li>
-                        <a href="/profile"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        <a href="/profile"><i class="fa fa-fw fa-user"></i> Профиль</a>
                     </li>
                     @show
                 </ul>
