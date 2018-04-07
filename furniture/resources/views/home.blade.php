@@ -102,7 +102,7 @@ class="active"
         <div class="col-md-6">
           <h2 class="featurette-heading">{{$model->title}}</h2>
           <p class="lead">{{$model->description}}</p>
-          <p><span class="price">{{$model->price}} $</span><a class="btn btn-default" href="#" role="button">Order Now</a></p>          
+          <p><span class="price">{{$model->price}} $</span></p>          
         </div>
         <div class="col-md-6">
           <a href="/model/{{$model->id}}"><img class="featurette-image img-responsive center-block" src="/model_photo/{{$model->main_photo}}" alt="Generic placeholder image"></a>
@@ -113,7 +113,7 @@ class="active"
         <div class="col-md-6 col-md-push-6">
           <h2 class="featurette-heading">{{$model->title}}</h2>
           <p class="lead">{{$model->description}}</p>
-          <p><span class="price">{{$model->price}} $</span>&nbsp;&nbsp;<a class="btn btn-default" href="#" role="button">Order Now</a></p>
+          <p><span class="price">{{$model->price}} $</span></p>
         </div>
         <div class="col-md-6 col-md-pull-6">
           <a href="/model/{{$model->id}}"><img class="featurette-image img-responsive center-block" src="/model_photo/{{$model->main_photo}}" alt="Generic placeholder image"></a>

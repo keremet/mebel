@@ -43,7 +43,7 @@ class="active"
     <div class="col-md-6">
       <h2 class="featurette-heading">{{$model->title}}</h2>
       <p class="lead">{{$model->description}}</p>
-      <p><span class="price">{{$model->price}} $</span>&nbsp;&nbsp;<a class="btn btn-default" href="#" role="button">Order Now</a>&nbsp; &nbsp; <a class="btn btn-default" href="/model/{{$model->id}}" role="button">View Detail</a></p>
+      <p><span class="price">{{$model->price}} $</span>&nbsp; &nbsp; <a class="btn btn-default" href="/model/{{$model->id}}" role="button">View Detail</a></p>
     </div>
   </div>   
   <hr>
