@@ -68,7 +68,12 @@ class="active"
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
-
+		<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2>Мы охуенны</h2>
+					<p>Даже не представляете на сколько.</p>
+				</div>
+			</div>
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
@@ -90,11 +95,12 @@ class="active"
 
 
       <!-- START THE FEATURETTES -->
-
-      <div class="row models-title">
-        <h1 class="text-center">Модели</h1>
-      </div>
-      <hr class="featurette-divider">
+      <div class="container-fluid">
+		<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2>Модели</h2>
+				</div>
+			</div>
 
       @foreach ($models as $index=>$model)
       @if ($index % 2 == 0)
@@ -120,11 +126,15 @@ class="active"
         </div>
       </div>
       @endif
-      <hr class="featurette-divider">
       @endforeach
       <!-- /END THE FEATURETTES -->
-
+</div>
       <!-- Three columns of text below the carousel -->
+      <div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2>Исполнители</h2>
+				</div>
+			</div>
       <div class="row executors">
       @foreach ($users as $user)
         <div class="col-lg-3">

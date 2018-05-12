@@ -33,15 +33,15 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
-    <div class="navbar-wrapper">
-      <div class="container">
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">МебелиON</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
+
+      <div class="container-fluid">
+		<nav class="gtco-nav" role="navigation">
+			<div class="row">
+				<div class="col-sm-2 col-xs-12">
+					<div id="gtco-logo"><a href="index.html">Mebelion <em>.</em></a></div>
+				</div>
+				<div class="col-xs-10 text-right menu-1 main-nav">
+					<ul class="nav navbar-nav">
                 <li @yield('home-active')><a href="/">Главная</a></li>
                 <li @yield('executors-active')><a href="/executors">Производители</a></li>
                 <li @yield('models-active')><a href="/models">Модели</a></li>
@@ -69,22 +69,82 @@
                 <li><a href="/login">Вход</a></li>
               </ul>
               <ul class="nav navbar-right navbar-nav">
-                <li><a href="/register">Регистрация</a></li>
+				  <li class="btn-cta"><a href="/register" class="external"><span>Регистрация</span></a></li>
+              
               </ul>
               @endif
-            </div>
-          </div>
-        </nav>
+					
+				</div>
+			</div>
+	</nav>
+
       </div>
-    </div>
+
 
     @yield('content')
 
     <!-- FOOTER -->
-    <footer>
-      <p class="pull-right"><a href="#">Вверх</a></p>
-      <p>&copy; 2018 МебелиON &middot; <!--a href="#">Privacy</a> &middot; <a href="#">Terms</a--></p>
-    </footer>
+    <footer id="gtco-footer" role="contentinfo">
+		<div class="gtco-container container">
+			<div class="row row-pb-md">
+
+				<div class="col-md-4">
+					<div class="gtco-widget">
+						<h3>About Us</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eos molestias quod sint ipsum possimus temporibus officia iste perspiciatis consectetur in fugiat repudiandae cum. Totam cupiditate nostrum ut neque ab?</p>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-md-push-1">
+					<div class="gtco-widget">
+						<h3>Links</h3>
+						<ul class="gtco-footer-links">
+							<li><a href="#">Knowledge Base</a></li>
+							<li><a href="#">Career</a></li>
+							<li><a href="#">Press</a></li>
+							<li><a href="#">Terms of services</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="gtco-widget">
+						<h3>Get In Touch</h3>
+						<ul class="gtco-quick-contact">
+							<li><a href="#"><i class="icon-phone"></i> +1 234 567 890</a></li>
+							<li><a href="#"><i class="icon-mail2"></i> info@gettemplates.co</a></li>
+							<li><a href="#"><i class="icon-chat"></i> Live Chat</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12">
+					<p class="pull-left">
+						<small class="block">&copy; 2017.</small> 
+						
+					</p>
+					<p class="pull-right">
+						<ul class="gtco-social-icons pull-right">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
