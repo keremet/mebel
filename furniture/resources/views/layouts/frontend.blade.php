@@ -79,6 +79,7 @@
 	</nav>
 
       </div>
+	<div class="shadow"></div>
 
 
     @yield('content')

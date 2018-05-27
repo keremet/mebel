@@ -5,6 +5,7 @@
   <!-- Custom styles for this template -->
   <link href="/css/executors.css" rel="stylesheet">
   <link href="/css/model.css" rel="stylesheet">
+  <link href="/css/home.css" rel="stylesheet">
 @endsection
 
 @section('models-active')
@@ -44,8 +45,9 @@ class="active"
     </div>  
     <div class="col-lg-7">
       <h2 class="featurette-heading">{{$model->title}}</h2>
-      <p class="lead">{{$model->description}}</p>
-      <p><span class="price">{{$model->price}} $</span></p>
+      <br/>
+      <div class="lead">{{$model->description}}</div>
+      <p><div class="price">{{$model->price}} $</div></p>
       @if (count($model->files) > 0)
       <div class="panel panel-default">
         <div class="panel-heading">

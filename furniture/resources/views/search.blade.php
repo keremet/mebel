@@ -3,6 +3,7 @@
 @section('css')
   @parent
   <!-- Custom styles for this template -->
+  <link href="/css/home.css" rel="stylesheet">
   <link href="/css/search.css" rel="stylesheet">
 @endsection
 

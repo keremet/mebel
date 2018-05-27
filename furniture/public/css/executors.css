@@ -11,9 +11,6 @@ body {
     height: 100%;
 }
 
-body {
-    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-}
 
 .img-portfolio {
     margin-bottom: 30px;
@@ -152,12 +149,12 @@ footer {
   width: 100%;
 }
 
-.featurette span.price {
-  font-size: 24px;
+.price {
+  font-size: 16px;
 }
 
-.featurette .lead{
-  font-size: 18px;
+.lead{
+  font-size: 14px;
 }
 
 .featurette-divider {

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
+	@extends('layouts/frontend')
 <!-- Mirrored from getbootstrap.com/examples/signin/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 28 Aug 2015 05:42:37 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
   <head>
@@ -13,13 +14,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="/favicon.ico">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Вход</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/css/signin.css" rel="stylesheet">
+    <link href="/css/home.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -32,6 +33,7 @@
     <![endif]-->
   </head>
 
+@section('content')
   <body>
 
     <div class="container">
@@ -52,7 +54,7 @@
         @endif
         
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Вход</button>
+        <button class="btn btn-cta" type="submit">Вход</button>
       </form>
 
     </div> <!-- /container -->
@@ -61,6 +63,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
   </body>
+@endsection
 
 <!-- Mirrored from getbootstrap.com/examples/signin/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 28 Aug 2015 05:42:39 GMT -->
 </html>
