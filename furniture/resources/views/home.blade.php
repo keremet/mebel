@@ -58,48 +58,52 @@ class="active"
 
       <!-- START THE FEATURETTES -->
       <div class="container-fluid">
-		<div class="row">
+        <div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
 					<h2>Модели</h2>
 				</div>
-			</div>
+		</div>
+		<div class="row">
+			@foreach ($models as $index=>$model)
+			<div class="col-md-4">
+                <div class="card">
+					<center><img height="300px" src="/model_photo/{{$model->main_photo}}"></center>
+                    <div class="box ">							
+                    <div class="card-block">
+                        <a href="/model/{{$model->id}}">
+							<h4 class="card-title">{{$model->title}}</h4>
+                        </a>
+                        
+                        <div class="card-text crop">
+                            {{$model->description}}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+						<p class="pricemain">{{$model->price}} р.</p>
+						<a href="/model/{{$model->id}}">
+							<button class="btn btn-info btn-sm">Подробнее...</button>
+						</a>
 
-      @foreach ($models as $index=>$model)
-      @if ($index % 2 == 0)
-      <div class="row featurette">
-        <div class="col-md-6">
-          <h2 class="featurette-heading">{{$model->title}}</h2>
-          <p class="lead">{{$model->description}}</p>
-          <p><span class="price">{{$model->price}} $</span></p>          
-        </div>
-        <div class="col-md-6">
-          <a href="/model/{{$model->id}}"><img class="featurette-image img-responsive center-block" src="/model_photo/{{$model->main_photo}}" alt="Generic placeholder image"></a>
-        </div>
-      </div>
-      @else
-      <div class="row featurette">
-        <div class="col-md-6 col-md-push-6">
-          <h2 class="featurette-heading">{{$model->title}}</h2>
-          <p class="lead">{{$model->description}}</p>
-          <p><span class="price">{{$model->price}} $</span></p>
-        </div>
-        <div class="col-md-6 col-md-pull-6">
-          <a href="/model/{{$model->id}}"><img class="featurette-image img-responsive center-block" src="/model_photo/{{$model->main_photo}}" alt="Generic placeholder image"></a>
-        </div>
-      </div>
-      @endif
-      @endforeach
+                        
+                    </div>
+                </div>
+            </div>
+            </div>
+            @endforeach
+		</div>
+      
+      
       <!-- /END THE FEATURETTES -->
-</div>
+      </div>
       <!-- Three columns of text below the carousel -->
       <div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>Исполнители</h2>
+					<h2>Производители</h2>
 				</div>
 			</div>
       <div class="row executors">
       @foreach ($users as $user)
-        <div class="col-lg-3">
+        <div class="col-md-3">
           <a href="/executor/{{$user->id}}"><img class="img-circle" src="/photo/{{$user->photo}}" alt="Generic placeholder image" width="140" height="140"></a>
           <h2>{{$user->title}}</h2>
           <p>{{$user->email}}</p>

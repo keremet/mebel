@@ -85,16 +85,16 @@
     @yield('content')
 
     <!-- FOOTER -->
-    <footer id="gtco-footer" role="contentinfo">
-		<div class="gtco-container container">
+    <footer role="contentinfo">
+		
 			<div class="row row-pb-md">
-				<div class="col-md-4">
+				<div class="col-md-6" style="padding-left:40px">
 					<div class="gtco-widget">
 						<h3>Контакты для производителей</h3>
-						<ul class="gtco-quick-contact">
-							<li><a href="#"><i class="icon-phone"></i>+7 922 980 35 33</a></li>
-							<li><a href="#"><i class="icon-mail2"></i>sales@mebelion.ru</a></li>
-						</ul>
+						
+							<p>+7 922 980 35 33</p>
+							<p>sales@mebelion.ru</p>
+						
 					</div>
 				</div>
 
@@ -102,28 +102,17 @@
 
 			<div class="row copyright">
 				<div class="col-md-12">
-					<p class="pull-left">
-						<small class="block">&copy; 2018.</small> 
+					<p class="pull-left" style="padding-left:23px">
+						<small class="block">&copy; 2018. MebeliON</small> 
 						
 					</p>
-					<p class="pull-right">
-						<ul class="gtco-social-icons pull-right">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
-					</p>
+					
 				</div>
 			</div>
 
-		</div>
 	</footer>
 	</div>
 
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
