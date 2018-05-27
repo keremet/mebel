@@ -47,7 +47,7 @@ class="active"
       <h2 class="featurette-heading">{{$model->title}}</h2>
       <br/>
       <div class="lead">{{$model->description}}</div>
-      <p><div class="price">{{$model->price}} $</div></p>
+      <p><div class="price">{{$model->price}} р.</div></p>
       @if (count($model->files) > 0)
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -93,7 +93,7 @@ class="active"
         <p>{{$user->description}}</p>
       </div>
       <div class="col-md-3">
-        <p><span class="price">{{$user->price}} $</span></p>      
+        <p><span class="price">{{$user->price}} р.</span></p>      
         <a class="btn btn-primary" href="/executor/{{$user->id}}">Профиль производителя</a>
       </div>      
   </div>
