@@ -36,19 +36,34 @@ class="active"
     </div>
   </div>
 
+  <div class="row">
   @foreach ($models as $model)
-  <div class="row featurette">
-    <div class="col-md-6">
-      <img class="featurette-image img-responsive center-block" src="/model_photo/{{$model->main_photo}}" alt="Generic placeholder image">
-    </div>
-    <div class="col-md-6">
-      <h2 class="featurette-heading">{{$model->title}}</h2>
-      <p class="lead">{{$model->description}}</p>
-      <p><span class="price">{{$model->price}} $</span>&nbsp; &nbsp; <a class="btn btn-default" href="/model/{{$model->id}}" role="button">Подробности</a></p>
-    </div>
-  </div>   
-  <hr>
+			<div class="col-md-4">
+                <div class="card">
+					<center><img height="300px" src="/model_photo/{{$model->main_photo}}"></center>
+                    <div class="box ">							
+                    <div class="card-block">
+                        <a href="/model/{{$model->id}}">
+							<h4 class="card-title">{{$model->title}}</h4>
+                        </a>
+                        
+                        <div class="card-text crop">
+                            {{$model->description}}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+						<p class="pricemain">{{$model->price}} р.</p>
+						<a href="/model/{{$model->id}}">
+							<button class="btn btn-info btn-sm">Подробнее...</button>
+						</a>
+
+                        
+                    </div>
+                </div>
+            </div>
+            </div>
   @endforeach
+  </div> 
 
   {!! $models->render() !!}
 </div>
