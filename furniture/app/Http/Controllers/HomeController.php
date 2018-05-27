@@ -88,9 +88,9 @@ class HomeController extends Controller {
 		$models = array();
 		if ($request->input('q')) {
 			$query = "%".$request->input('q')."%";
-			$models = FModel::where('title', 'like', $query)->paginate(6);
+			$models = FModel::where('title', 'like', $query)->orderBy('id', 'desc')->paginate(6);
 		} else {
-			$models = FModel::paginate(6);
+			$models = FModel::orderBy('id', 'desc')->paginate(6);
 		}
 
 		foreach ($models as $key=>$model)
